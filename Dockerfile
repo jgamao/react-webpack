@@ -1,5 +1,4 @@
 FROM nginx:latest
-WORKDIR /var/www/html
 
 # Remove the default nginx index.html
 RUN rm -rf /var/www/html/index.nginx-debian.html
@@ -8,7 +7,7 @@ RUN rm -rf /var/www/html/index.nginx-debian.html
 COPY /dist/* /var/www/html/
 
 # Expose the public http port
-EXPOSE 80
+EXPOSE 8080
 
 # Start server
 CMD ["nginx", "-g", "daemon off;"]
